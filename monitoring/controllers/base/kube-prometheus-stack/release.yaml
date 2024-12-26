@@ -36,7 +36,7 @@ spec:
         serviceName: kube-prometheus-stack-grafana
         hosts:
           - grafana.mozka.app
-        # tls:
-        #   - secretName: grafana-tls-secret
-        #     hosts:
-        #       - grafana.mozka.app
+        tls:
+          - secretName: grafana-tls-secret
+            hosts:
+              - grafana.mozka.app
