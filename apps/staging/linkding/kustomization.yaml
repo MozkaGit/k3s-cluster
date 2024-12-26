@@ -5,4 +5,4 @@ resources:
   - ../../base/linkding
   - cloudflare.yaml
   - cloudflare-credentials.yaml
-  - linkding-credentials.yaml
+  - linkding-env-secret.yaml
