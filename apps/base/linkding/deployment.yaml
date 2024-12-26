@@ -19,6 +19,9 @@ spec:
       containers:
         - name: linkding
           image: sissbruecker/linkding:1.31.0
+          envFrom:
+            - secretRef:
+                name: linkding-credentials
           securityContext:
             allowPrivilegeEscalation: false
           ports:
