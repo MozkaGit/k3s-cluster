@@ -30,7 +30,7 @@ spec:
     grafana:
       adminPassword: mozka
       ingress:
-        enabled: true
+        enabled: false
         ingressClassName: traefik
         servicePort: 3000
         serviceName: kube-prometheus-stack-grafana

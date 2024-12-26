@@ -45,7 +45,7 @@ spec:
       volumes:
         - name: creds
           secret:
-            secretName: tunnel-credentials
+            secretName: grafana-cloudflare-secret
 
         # Create a config.yaml file from the ConfigMap below.
         - name: config
@@ -67,7 +67,7 @@ data:
   config.yaml: |
     # Name of the tunnel you want to run
 
-    tunnel: ldhl
+    tunnel: grhl
 
     credentials-file: /etc/cloudflared/creds/credentials.json
 
