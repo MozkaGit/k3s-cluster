@@ -18,7 +18,7 @@ spec:
         runAsGroup: 33
       containers:
         - name: linkding
-          image: sissbruecker/linkding:1.31.0
+          image: sissbruecker/linkding:1.36.0
           envFrom:
             - secretRef:
                 name: linkding-credentials
