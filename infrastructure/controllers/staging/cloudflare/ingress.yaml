@@ -12,7 +12,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: kube-prometheus-stack-grafana
+                name: kube-prometheus-stack-grafana.monitoring
                 port:
                   number: 80
     - host: linkding.mozka.app
@@ -22,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: linkding
+                name: linkding.linkding
                 port:
                   number: 9090
     - host: audio.mozka.app
@@ -32,6 +32,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: audiobookshelf
+                name: audiobookshelf.audiobookshelf
                 port:
                   number: 3005
