@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: audiobookshelf
+data:
+  audiobookshelf: |
+    METADATA_PATH=/usr/share/audiobookshelf/metadata
+    CONFIG_PATH=/usr/share/audiobookshelf/config
+    FFMPEG_PATH=/usr/lib/audiobookshelf-ffmpeg/ffmpeg
+    FFPROBE_PATH=/usr/lib/audiobookshelf-ffmpeg/ffprobe
+    TONE_PATH=/usr/lib/audiobookshelf-ffmpeg/tone
+    PORT=3005
