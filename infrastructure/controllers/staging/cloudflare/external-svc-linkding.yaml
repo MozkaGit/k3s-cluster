@@ -1,8 +1,0 @@
-# https://kubernetes.io/docs/concepts/services-networking/service/
-apiVersion: v1
-kind: Service
-metadata:
-  name: linkding
-spec:
-  type: ExternalName
-  externalName: linkding.linkding
