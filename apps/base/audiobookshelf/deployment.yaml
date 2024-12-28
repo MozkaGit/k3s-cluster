@@ -12,6 +12,10 @@ spec:
       labels:
         app: audiobookshelf
     spec:
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        runAsGroup: 1000
       containers:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.17.4
@@ -27,9 +31,8 @@ spec:
               mountPath: /metadata
             - name: audiobookshelf-data
               mountPath: /config
-          # envFrom:
-          #   - configMapRef:
-          #       name: audiobookshelf
+          securityContext:
+            allowPrivilegeEscalation: false
           ports:
             - containerPort: 80
 
