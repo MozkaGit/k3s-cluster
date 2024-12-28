@@ -3,6 +3,9 @@ kind: Kustomization
 namespace: cloudflare
 resources:
   - ../../base/cloudflare
-  - ingress.yaml
   - cloudflare-secret.yaml
   - cloudflare.yaml
+  - external-svc-audiobookshelf.yaml
+  - external-svc-grafana.yaml
+  - external-svc-linkding.yaml
+  - ingress.yaml
