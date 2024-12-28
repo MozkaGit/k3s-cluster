@@ -1,0 +1,37 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cloudflare-ingress
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: grafana.mozka.app
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kube-prometheus-stack-grafana.monitoring.svc.cluster.local
+                port:
+                  number: 80
+    - host: linkding.mozka.app
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: linkding.linkding.svc.cluster.local:9090
+                port:
+                  number: 9090
+    - host: audio.mozka.app
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: audiobookshelf.audiobookshelf.svc.cluster.local:3005
+                port:
+                  number: 3005

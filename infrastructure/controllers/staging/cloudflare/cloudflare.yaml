@@ -76,12 +76,10 @@ data:
     no-autoupdate: true
 
     ingress:
-      - hostname: grafana.mozka.app
-        service: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local
-      - hostname: linkding.mozka.app
-        service: http://linkding.linkding.svc.cluster.local:9090
-      - hostname: audio.mozka.app
-        service: http://audiobookshelf.audiobookshelf.svc.cluster.local:3005
+      - hostname: *.mozka.app
+        service: https://traefik.kube-system.svc.cluster.local:443
+        originRequest:
+          noTLSVerify: true
       
       # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
       # issues. If hello.example.com resolves and tunnel.example.com does not, then the problem is
