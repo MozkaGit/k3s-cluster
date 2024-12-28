@@ -1,11 +1,11 @@
-apiversion: v1
-kind: service
+apiVersion: v1
+kind: Service
 metadata:
   name: audiobookshelf
 spec:
   ports:
     - port: 3005
-      targetport: 80
+      targetPort: 80
   selector:
     app: audiobookshelf
-  type: clusterip
+  type: ClusterIP
