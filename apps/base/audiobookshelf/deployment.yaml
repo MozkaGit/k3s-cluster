@@ -16,17 +16,28 @@ spec:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.17.4
           volumeMounts:
-            - name: config
+            - name: audiobookshelf-config
               mountPath: /etc/default/
               readOnly: true
-          envFrom:
-            - configMapRef:
-                name: audiobookshelf
+            - name: audiobookshelf-data
+              mountPath: /podcasts
+            - name: audiobookshelf-data
+              mountPath: /audiobooks
+            - name: audiobookshelf-data
+              mountPath: /metadata
+            - name: audiobookshelf-data
+              mountPath: /config
+          # envFrom:
+          #   - configMapRef:
+          #       name: audiobookshelf
           ports:
             - containerPort: 80
 
       volumes:
-        - name: config
+        - name: audiobookshelf-data
+          persistentVolumeClaim:
+            claimName: audiobookshelf-data-pvc
+        - name: audiobookshelf-config
           configMap:
             name: audiobookshelf
             items:
