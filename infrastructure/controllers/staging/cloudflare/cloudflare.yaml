@@ -76,8 +76,8 @@ data:
     no-autoupdate: true
 
     ingress:
-      - hostname: *.mozka.app
-        service: https://traefike.kube-system.svc.cluster.local:443
+      - hostname: "*.mozka.app"
+        service: https://traefik.kube-system.svc.cluster.local:443
         originRequest:
           noTLSVerify: true
       
