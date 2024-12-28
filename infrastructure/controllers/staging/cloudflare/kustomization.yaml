@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: cloudflare
 resources:
   - ../../base/cloudflare
+  - ingress.yaml
   - cloudflare-secret.yaml
   - cloudflare.yaml
