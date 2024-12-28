@@ -23,7 +23,7 @@ spec:
             - configMapRef:
                 name: audiobookshelf
           ports:
-            - containerPort: 3005
+            - containerPort: 80
 
       volumes:
         - name: config
